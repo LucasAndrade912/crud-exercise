@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { HouseTableComponent } from './house/house-table/house-table.component';
+import { HouseFormComponent } from './house/house-form/house-form.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'houses', pathMatch: 'full' },
+  { path: 'houses', component: HouseTableComponent },
+  { path: 'houses/register', component: HouseFormComponent },
+  { path: 'houses/edit', component: HouseFormComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
