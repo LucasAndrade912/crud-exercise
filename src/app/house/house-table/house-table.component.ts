@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HOUSES } from '../../db';
+import { HOUSES } from '../../shared/db';
 
 @Component({
   selector: 'app-house-table',

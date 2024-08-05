@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { HOUSES } from '../../db';
-import { House } from '../../models/House';
+import { HOUSES } from '../../shared/db';
+import { House } from '../../shared/models/House';
 
 @Component({
   selector: 'app-house-form',
