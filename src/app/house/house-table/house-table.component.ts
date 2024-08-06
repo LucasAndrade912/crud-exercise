@@ -9,7 +9,7 @@ import { DB } from '../../shared/db';
 })
 export class HouseTableComponent {
   dataSource = DB.getHouses();
-  displayedColumns: string[] = ['houseName', 'sizeInSquareMeter', 'rooms', 'bathrooms', 'price', 'actions'];
+  displayedColumns: string[] = ['houseName', 'size', 'rooms', 'bathrooms', 'dailyPrice', 'actions'];
 
   public deleteHouse(id: number): void {
     DB.removeHouse(id);

@@ -1,17 +1,25 @@
 export class House {
+  private static PRICE_PER_ROOM = 100;
+  private static PRICE_PER_BATHROOM = 50;
+  private static PRICE_PER_SQUARE_METER = 2;
   private static ID_AUTOINCREMENT = 0;
   private _id: number;
-  private _price: number;
+  private _dailyPrice: number;
 
   constructor(
     private _houseName: string,
-    private _sizeInSquareMeter: number,
+    private _size: number,
     private _rooms: number,
     private _bathrooms: number
   ) {
     House.ID_AUTOINCREMENT += 1;
     this._id = House.ID_AUTOINCREMENT;
-    this._price = Number((_sizeInSquareMeter / _rooms * _bathrooms).toFixed(2));
+
+    const roomPrice = _rooms * House.PRICE_PER_ROOM;
+    const bathroomPrice = _bathrooms * House.PRICE_PER_BATHROOM;
+    const sizePrice = _size * House.PRICE_PER_SQUARE_METER;
+
+    this._dailyPrice = Number((roomPrice + bathroomPrice + sizePrice).toFixed(2));
   }
 
   public get id(): number {
@@ -26,8 +34,8 @@ export class House {
     return this._houseName;
   }
 
-  public get sizeInSquareMeter(): number {
-    return this._sizeInSquareMeter;
+  public get size(): number {
+    return this._size;
   }
 
   public get rooms(): number {
@@ -38,7 +46,7 @@ export class House {
     return this._bathrooms;
   }
 
-  public get price(): number {
-    return this._price;
+  public get dailyPrice(): number {
+    return this._dailyPrice;
   }
 }

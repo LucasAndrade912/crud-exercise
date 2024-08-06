@@ -25,7 +25,7 @@ export class HouseFormComponent {
     if (this.id !== 0) {
       const house = DB.getHouse(this.id);
       this.houseName = house.houseName;
-      this.size = house.sizeInSquareMeter.toString();
+      this.size = house.size.toString();
       this.rooms = house.rooms.toString();
       this.bathrooms = house.bathrooms.toString();
     }

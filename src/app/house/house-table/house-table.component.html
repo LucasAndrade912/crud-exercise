@@ -6,11 +6,9 @@
   </ng-container>
 
   <!-- Size in Square Meter Column -->
-  <ng-container matColumnDef="sizeInSquareMeter">
+  <ng-container matColumnDef="size">
     <th mat-header-cell *matHeaderCellDef>Size m²</th>
-    <td mat-cell *matCellDef="let element">
-      {{ element.sizeInSquareMeter }}m²
-    </td>
+    <td mat-cell *matCellDef="let element">{{ element.size }}m²</td>
   </ng-container>
 
   <!-- Rooms Column -->
@@ -26,10 +24,10 @@
   </ng-container>
 
   <!-- Price Column -->
-  <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef>Price</th>
+  <ng-container matColumnDef="dailyPrice">
+    <th mat-header-cell *matHeaderCellDef>Daily Price</th>
     <td mat-cell *matCellDef="let element">
-      {{ element.price | currency : "BRL" }}
+      {{ element.dailyPrice | currency : "BRL" }}
     </td>
   </ng-container>
 
