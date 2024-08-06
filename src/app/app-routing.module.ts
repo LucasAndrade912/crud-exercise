@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'houses', pathMatch: 'full' },
   { path: 'houses', component: HouseTableComponent },
   { path: 'houses/register', component: HouseFormComponent },
-  { path: 'houses/edit', component: HouseFormComponent }
+  { path: 'houses/:id/edit', component: HouseFormComponent }
 ];
 
 @NgModule({

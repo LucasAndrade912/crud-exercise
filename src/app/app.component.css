@@ -4,6 +4,10 @@ header {
   padding: 2rem;
 }
 
+header h1 {
+  cursor: pointer;
+}
+
 header nav ul {
   display: flex;
   list-style: none;

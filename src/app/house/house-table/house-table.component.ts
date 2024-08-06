@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HOUSES } from '../../shared/db';
+
+import { DB } from '../../shared/db';
 
 @Component({
   selector: 'app-house-table',
@@ -7,6 +8,11 @@ import { HOUSES } from '../../shared/db';
   styleUrl: './house-table.component.css'
 })
 export class HouseTableComponent {
-  dataSource = HOUSES;
+  dataSource = DB.getHouses();
   displayedColumns: string[] = ['houseName', 'sizeInSquareMeter', 'rooms', 'bathrooms', 'price', 'actions'];
+
+  public deleteHouse(id: number): void {
+    DB.removeHouse(id);
+    this.dataSource = DB.getHouses();
+  }
 }
